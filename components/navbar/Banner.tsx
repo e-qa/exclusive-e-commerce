@@ -47,13 +47,13 @@ const Banner = () => {
               </span>
               <Button
                 type="button"
-                className="capitalize text-[10px] lg:text-sm p-1 bg-blue-800"
+                className="capitalize text-[10px] lg:text-sm p-1 bg-blue-800 rounded-md"
               >
                 men
               </Button>
               <Button
                 type="button"
-                className="capitalize text-[10px] lg:text-sm p-1 bg-blue-800"
+                className="capitalize text-[10px] lg:text-sm p-1 bg-blue-800 rounded-md"
               >
                 women
               </Button>

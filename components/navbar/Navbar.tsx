@@ -1,9 +1,11 @@
 import Banner from './Banner';
+import NavbarBottom from './NavbarBottom';
 
 const Navbar = () => {
   return (
     <>
       <Banner />
+      <NavbarBottom />
     </>
   );
 };
