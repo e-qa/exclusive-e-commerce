@@ -3,7 +3,7 @@ import Button from '../button/Button';
 
 const NavSearch = () => {
   return (
-    <form className="xl:w-[35rem] w-[22rem]  flex">
+    <form className="xl:w-[35rem] w-[22rem] lg:flex hidden">
       <input
         type="search"
         placeholder="Search..."

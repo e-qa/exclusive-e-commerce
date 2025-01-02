@@ -5,7 +5,7 @@ import { MdOutlineShoppingCart } from 'react-icons/md';
 const Links = () => {
   return (
     <div className="flex items-center gap-10">
-      <div className="flex items-center gap-3">
+      <div className="hidden items-center gap-3 lg:flex">
         <IoCallOutline size={40} />
         <div className="flex flex-col">
           <span className="text-xs text-slate-400 font-bold">CALL US NOW</span>
@@ -17,13 +17,13 @@ const Links = () => {
 
       <div className="flex gap-3">
         <button>
-          <FaRegUserCircle size={30} />
+          <FaRegUserCircle className="text-2xl lg:text-3xl" />
         </button>
         <button>
-          <FaRegHeart size={30} />
+          <FaRegHeart className="text-2xl lg:text-3xl" />
         </button>
         <button>
-          <MdOutlineShoppingCart size={30} />
+          <MdOutlineShoppingCart className="text-2xl lg:text-3xl" />
         </button>
       </div>
     </div>

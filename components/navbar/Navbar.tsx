@@ -1,4 +1,5 @@
 import Banner from './Banner';
+import NavbarBottom from './NavbarBottom';
 import NavbarCenter from './NavbarCenter';
 
 const Navbar = () => {
@@ -6,6 +7,7 @@ const Navbar = () => {
     <>
       <Banner />
       <NavbarCenter />
+      <NavbarBottom />
     </>
   );
 };
