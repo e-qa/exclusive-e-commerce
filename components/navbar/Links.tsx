@@ -9,7 +9,7 @@ const Links = () => {
         <IoCallOutline size={40} />
         <div className="flex flex-col">
           <span className="text-xs text-slate-400 font-bold">CALL US NOW</span>
-          <a href="#" className="text-base">
+          <a href="#" className="text-base font-bold">
             +944 123 456 67 89
           </a>
         </div>

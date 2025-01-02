@@ -1,11 +1,11 @@
 import Banner from './Banner';
-import NavbarBottom from './NavbarBottom';
+import NavbarCenter from './NavbarCenter';
 
 const Navbar = () => {
   return (
     <>
       <Banner />
-      <NavbarBottom />
+      <NavbarCenter />
     </>
   );
 };
