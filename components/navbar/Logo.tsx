@@ -1,17 +1,17 @@
+'use client';
 import Link from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Button from '../button/Button';
 
-const Logo = () => {
+interface LogoProps {
+  toggleMenu: () => void;
+}
+
+const Logo = ({ toggleMenu }: LogoProps) => {
   return (
     <div className="flex items-center gap-5">
-      <div className="block lg:hidden">
-        <Button
-          type="button"
-          onClick={() => {
-            console.log('hello');
-          }}
-        >
+      <div className="flex lg:hidden">
+        <Button type="button" onClick={toggleMenu}>
           <GiHamburgerMenu />
         </Button>
       </div>
