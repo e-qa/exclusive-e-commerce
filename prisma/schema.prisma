@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum Category {
+  MEN
+  WOMEN
+}
+
+model Product {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  images      String[]
+  price       Float
+  stock       Int
+  category    Category
+  isFeatured  Boolean  @default(false)
+  isLatest    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
