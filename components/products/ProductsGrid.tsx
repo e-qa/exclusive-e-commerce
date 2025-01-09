@@ -4,14 +4,14 @@ import { FaRegHeart } from 'react-icons/fa';
 
 const ProductsGrid = ({ products }: { products: Product[] }) => {
   return (
-    <div className="grid grid-cols-3 grid-rows-2 content-center">
+    <div className="grid grid-cols-3 grid-rows-2 content-center gap-y-5">
       {products.map((product) => {
         return (
           <div
             key={product.id}
-            className="flex flex-col items-center justify-center mt-5"
+            className="flex flex-col items-center justify-center"
           >
-            <div className="relative w-80 h-80">
+            <div className="relative w-64 h-64">
               <Image
                 src={product.images[0]}
                 alt={product.name}
@@ -20,8 +20,8 @@ const ProductsGrid = ({ products }: { products: Product[] }) => {
               />
             </div>
 
-            <div className="flex flex-col justify-start w-80">
-              <div className="flex items-center justify-between mt-2">
+            <div className="flex flex-col justify-start w-64">
+              <div className="flex items-center justify-between w-full">
                 <h4>{product.name}</h4>
                 <FaRegHeart className="text-xl" />
               </div>
