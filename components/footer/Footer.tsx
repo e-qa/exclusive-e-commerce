@@ -1,20 +1,24 @@
-import Logo from '../navbar/Logo';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <footer className="bg-secondary mt-20">
       <div className="container py-10 text-white">
-        <div className="flex items-center gap-20 w-full">
-          <div className="w-full flex flex-col gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-20 w-full">
+          <div className="w-full flex flex-col gap-0 lg:gap-10">
             <h4 className="my-5">About us</h4>
-            <Logo />
+            <Link
+              href={'/'}
+              className="capitalize text-2xl lg:text-3xl flex flex-col font-bold"
+            >
+              exclusive
+            </Link>
             <p className="text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
               vestibulum magna, et dapibus lacus. Duis nec vestibulum magna, et
               dapibus lacus.
             </p>
           </div>
-
           <div className="w-full">
             <h4 className="my-5">Contact Info</h4>
             <ul className="flex flex-col gap-4">
