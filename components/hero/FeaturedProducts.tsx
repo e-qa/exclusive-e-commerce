@@ -4,6 +4,7 @@ import FeaturedCarousel from './FeaturedCarousel';
 
 const FeaturedProducts = async () => {
   const products = await getFeaturedProducts();
+
   return (
     <div className="container">
       <div className="block lg:flex items-center pt-5">

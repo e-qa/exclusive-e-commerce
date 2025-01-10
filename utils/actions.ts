@@ -8,3 +8,12 @@ export const getFeaturedProducts = async () => {
   });
   return products;
 };
+
+export const getLatestProducts = async () => {
+  const products = await db.product.findMany({
+    where: {
+      isLatest: true,
+    },
+  });
+  return products;
+};
