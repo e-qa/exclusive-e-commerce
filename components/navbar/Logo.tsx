@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import Button from '../button/Button';
 
 interface LogoProps {
-  toggleMenu: () => void;
+  toggleMenu?: () => void;
 }
 
 const Logo = ({ toggleMenu }: LogoProps) => {

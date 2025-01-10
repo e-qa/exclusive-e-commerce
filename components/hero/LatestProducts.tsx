@@ -6,7 +6,7 @@ const LatestProducts = async () => {
 
   return (
     <div className="container">
-      <h2 className="text-4xl my-10">Latest Products</h2>
+      <h4 className="text-4xl my-10">Latest Products</h4>
       <ProductsGrid products={products} />
     </div>
   );
