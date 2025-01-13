@@ -17,3 +17,14 @@ export const getLatestProducts = async () => {
   });
   return products;
 };
+
+export const getAllProducts = async ({ search = '' }: { search: string }) => {
+  return db.product.findMany({
+    where: {
+      OR: [{ name: { contains: search, mode: 'insensitive' } }],
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+};
