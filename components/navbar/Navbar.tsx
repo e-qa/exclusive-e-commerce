@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import Banner from './Banner';
 import NavbarBottom from './NavbarBottom';

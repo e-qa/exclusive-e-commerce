@@ -12,7 +12,13 @@ const ProductsContainer = async ({
 
   return (
     <div className="container mt-10">
-      <ProductsGrid products={products} />
+      {products.length === 0 ? (
+        <h5 className="text-2xl mt-16">
+          Sorry, no products matched your search...
+        </h5>
+      ) : (
+        <ProductsGrid products={products} />
+      )}
     </div>
   );
 };
