@@ -9,6 +9,7 @@ const NavSearch = () => {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('');
 
   const handleSearch = useDebouncedCallback((value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -20,6 +21,20 @@ const NavSearch = () => {
       params.delete('search');
       setSearch('');
     }
+
+    replace(`/products?${params.toString()}`);
+  }, 500);
+
+  const handleSelect = useDebouncedCallback((value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set('category', value);
+      setCategory(value);
+    } else {
+      params.delete('category');
+      setCategory('');
+    }
+
     replace(`/products?${params.toString()}`);
   }, 500);
 
@@ -40,9 +55,14 @@ const NavSearch = () => {
       <select
         name="category"
         id="category"
+        value={category}
         className="border-y w-24 bg-slate-100 text-slate-400 p-2"
+        onChange={(e) => {
+          setCategory(e.target.value);
+          handleSelect(e.target.value);
+        }}
       >
-        <option value="default">All</option>
+        <option value="">All</option>
         <option value="MEN">Men</option>
         <option value="WOMEN">Women</option>
       </select>
