@@ -18,10 +18,21 @@ export const getLatestProducts = async () => {
   return products;
 };
 
-export const getAllProducts = async ({ search = '' }: { search: string }) => {
+export const getAllProducts = async ({
+  search = '',
+  category,
+}: {
+  search?: string;
+  category?: 'MEN' | 'WOMEN';
+}) => {
   return db.product.findMany({
     where: {
-      OR: [{ name: { contains: search, mode: 'insensitive' } }],
+      AND: [
+        {
+          OR: [{ name: { contains: search, mode: 'insensitive' } }],
+        },
+        category ? { category } : {},
+      ],
     },
     orderBy: {
       createdAt: 'desc',
