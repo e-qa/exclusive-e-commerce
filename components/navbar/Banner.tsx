@@ -2,6 +2,7 @@
 import { IoIosClose } from 'react-icons/io';
 import Button from '../button/Button';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const Banner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,18 +46,20 @@ const Banner = () => {
               <span className="text-[11px]  lg:text-base">
                 Get Up to <b>40% OFF </b>New-Season Styles
               </span>
-              <Button
+              <Link
+                href={'/products?category=MEN'}
                 type="button"
                 className="capitalize text-[10px] lg:text-sm p-1 bg-blue-800 rounded-md"
               >
                 men
-              </Button>
-              <Button
+              </Link>
+              <Link
+                href={'products?category=WOMEN'}
                 type="button"
                 className="capitalize text-[10px] lg:text-sm p-1 bg-blue-800 rounded-md"
               >
                 women
-              </Button>
+              </Link>
               <small className="ml-1 text-[10px] lg:text-[12px] text-slate-300">
                 * Limited time only.
               </small>

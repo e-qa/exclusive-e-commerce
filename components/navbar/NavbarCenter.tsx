@@ -9,7 +9,7 @@ interface NavbarCenterProps {
 
 const NavbarCenter = ({ toggleMenu }: NavbarCenterProps) => {
   return (
-    <div className="container py-7">
+    <div className="container py-7 bg-white">
       <div className="flex justify-between items-center">
         <Logo toggleMenu={toggleMenu} />
         <Suspense>
