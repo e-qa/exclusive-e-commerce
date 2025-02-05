@@ -1,6 +1,14 @@
-import { FaRegHeart, FaRegUserCircle } from 'react-icons/fa';
 import { IoCallOutline } from 'react-icons/io5';
+import { CiLogin, CiLogout } from 'react-icons/ci';
+import {
+  SignedIn,
+  SignedOut,
+  SignOutButton,
+  SignUpButton,
+} from '@clerk/nextjs';
+import { FaRegHeart } from 'react-icons/fa';
 import { MdOutlineShoppingCart } from 'react-icons/md';
+import Link from 'next/link';
 
 const Links = () => {
   return (
@@ -14,18 +22,28 @@ const Links = () => {
           </a>
         </div>
       </div>
-
-      <div className="flex gap-3">
-        <button>
-          <FaRegUserCircle className="text-2xl lg:text-3xl" />
-        </button>
-        <button>
-          <FaRegHeart className="text-2xl lg:text-3xl" />
-        </button>
-        <button>
-          <MdOutlineShoppingCart className="text-2xl lg:text-3xl" />
-        </button>
-      </div>
+      <SignedOut>
+        <SignUpButton mode="modal">
+          <button>
+            <CiLogin className="text-2xl lg:text-3xl" />
+          </button>
+        </SignUpButton>
+      </SignedOut>
+      <SignedIn>
+        <div className="flex gap-3">
+          <SignOutButton>
+            <Link href={'/'}>
+              <CiLogout className="text-2xl lg:text-3xl" />
+            </Link>
+          </SignOutButton>
+          <button>
+            <FaRegHeart className="text-2xl lg:text-3xl" />
+          </button>
+          <button>
+            <MdOutlineShoppingCart className="text-2xl lg:text-3xl" />
+          </button>
+        </div>
+      </SignedIn>
     </div>
   );
 };
